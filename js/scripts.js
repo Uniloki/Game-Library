@@ -1,43 +1,3 @@
-//add js here
-let parent = document.getElementById('gamelist')
-let newGame = document.createElement('div')
-let newGameText = document.createElement('p')
-let newGameText1 = document.createElement('p')
-let newGameText2 = document.createElement('p')
-let newGameButton = document.createElement('button')
-
-
-let newGame2 = document.createElement('div')
-let newGame2Text = document.createElement('p')
-let newGame2Text1 = document.createElement('p')
-let newGame2Text2 = document.createElement('p')
-let newGame2Button = document.createElement('button')
-
-newGame2Text.innerText = 'This is a new game';
-newGame2Text1.innerText = 'played';
-newGame2Text2.innerText = 'finished';
-newGame2Button.innerText = 'x';
-newGame2.appendChild(newGame2Text);
-newGame2.appendChild(newGame2Text1);
-newGame2.appendChild(newGame2Text2);
-newGame2.appendChild(newGame2Button);
-parent.appendChild(newGame2);
-
-newGameText.innerText = 'This is a new game';
-newGameText1.innerText = 'played';
-newGameText2.innerText = 'finished';
-newGameButton.innerText = 'x';
-console.log(parent);
-newGame.appendChild(newGameText);
-newGame.appendChild(newGameText1);
-newGame.appendChild(newGameText2);
-newGame.appendChild(newGameButton);
-parent.appendChild(newGame);
-
-
-
-
-
 
 
 
@@ -47,6 +7,7 @@ let gameTitle = document.getElementById('gametitle');
 let isPlayed = document.getElementById('played');
 let isFinished = document.getElementById('finished');
 let gameForm = document.getElementById('gameForm');
+let allDeleteButtons;
 console.log (gameForm);
 
 function collaspe(){
@@ -94,7 +55,7 @@ form.onsubmit = function(e) {
     gameLibrary.push(NewGame);
     console.log(gameLibrary);
     createNewGameElement(gameLibrary);
-    Form.reset();
+    form.reset();
 }
 function createNewGameElement(arr){
     let libraryL = arr.length;
@@ -104,16 +65,31 @@ function createNewGameElement(arr){
         let newGameText1 = document.createElement('p')
         let newGameText2 = document.createElement('p')
         let newGameButton = document.createElement('button')
+        newGame.setAttribute("class",`data${libraryL-1}`);
         newGameText.innerText = arr[libraryL-1].name;
         newGameText1.innerText = arr[libraryL-1].played;
         newGameText2.innerText = arr[libraryL-1].finished;
         newGameButton.innerText = 'x';
+        newGameButton.setAttribute("data",libraryL-1);
+        newGameButton.setAttribute('class',"deletebutton");
         console.log(parent);
         newGame.appendChild(newGameText);
         newGame.appendChild(newGameText1);
         newGame.appendChild(newGameText2);
         newGame.appendChild(newGameButton);
         parent.appendChild(newGame);
+
+        allDeleteButtons = document.querySelectorAll('.deletebutton');
+        console.log(allDeleteButtons)
+        allDeleteButtons.forEach(function(elem) {
+            elem.addEventListener("click", function() {
+                let removedVal = this.getAttribute('data');
+                let removedItem = document.querySelector(`.data${removedVal}`)
+                parent.removeChild(removedItem);
+            });
+        });
 }
 
-//event handler 
+
+
+
