@@ -3,16 +3,48 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Game Library</title>
   <link rel="stylesheet" href="css/styles.css">
 
 </head>
 
 <body>
-<p> hello </p>
+<header>
+    <h1>Games</h1>
+</header>
+    <form class="game-form">
+        <div>
+        <label for="gametitle">Game Title</label>
+        <input type="text" id="gametitle">
+        </div>
+        <div>
+        <label for="played">Owned?</label>
+        <input type="checkbox" id="played">
+        </div>
+        <div>
+        <label for="played">Finished?</label>
+        <input type="checkbox" id="finished">
+        </div>
+        <input type="submit" value="Add Game" id="add">
+    </form>
+<section>
+    <div id="gamelist">
+        <div>
+            <p> Game Name </p> <p> played </p> <p> finished </p>
+        </div>
+        <div>
+            <p> Game Name </p> <p> played </p> <p> finished </p>
+        </div>
+        <div>
+            <p> Game Name </p> <p> played </p> <p> finished </p>
+        </div>
+    </div>
+</section>
 
-
+<div class="footer">
+    <p> My footer </p>
+</div>
 
 
   <script src="js/scripts.js"></script>
