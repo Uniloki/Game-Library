@@ -91,23 +91,22 @@ form.onsubmit = function(e) {
         finished = 'Not Finished'
     }
     const NewGame = new Game(gameName,played,finished);
-      gameLibrary.push(NewGame);
-      console.log(gameLibrary);
-      createNewGameElement(gameLibrary);d
-    form.reset();
+    gameLibrary.push(NewGame);
+    console.log(gameLibrary);
+    createNewGameElement(gameLibrary);
+    Form.reset();
 }
 function createNewGameElement(arr){
     let libraryL = arr.length;
-    for(let i = 0; i < libraryL; i++){
         let parent = document.getElementById('gamelist')
         let newGame = document.createElement('div')
         let newGameText = document.createElement('p')
         let newGameText1 = document.createElement('p')
         let newGameText2 = document.createElement('p')
         let newGameButton = document.createElement('button')
-        newGameText.innerText = arr[i].name;
-        newGameText1.innerText = arr[i].played;
-        newGameText2.innerText = arr[i].finished;
+        newGameText.innerText = arr[libraryL-1].name;
+        newGameText1.innerText = arr[libraryL-1].played;
+        newGameText2.innerText = arr[libraryL-1].finished;
         newGameButton.innerText = 'x';
         console.log(parent);
         newGame.appendChild(newGameText);
@@ -115,7 +114,6 @@ function createNewGameElement(arr){
         newGame.appendChild(newGameText2);
         newGame.appendChild(newGameButton);
         parent.appendChild(newGame);
-    }
 }
 
 //event handler 
