@@ -1,6 +1,5 @@
 
 
-
 let expandButton = document.getElementById('fixedbutton')
 let form = document.querySelector('form');
 let gameTitle = document.getElementById('gametitle');
@@ -89,6 +88,10 @@ function createNewGameElement(arr){
             });
         });
 }
+
+
+//Collapse 
+
 
 
 
