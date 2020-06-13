@@ -66,10 +66,9 @@ html { font-size: 62.5%;
     border-radius: 20px;
     padding-right: 10px;
     padding-left: 10px;
+    width: 50px;
 }
-#fixedbutton:focus{
-    transform: rotate(-45deg);
-}
+
 
 header{
     background-color: #3B2C35;
@@ -98,12 +97,15 @@ form div{
     width: 100px;
     padding: 5px;
 }
+#add:hover{
+    background-color: grey;
+}
 .gameform{
   display:flex;
-  overflow: scroll;
+  overflow: auto;
   flex-direction: column;
   max-height: 200px;
-  transition: max-height .5s ease-out;
+  transition: overflow 10s ease-out;
   transition: max-height .5s ease-out;
   
 }

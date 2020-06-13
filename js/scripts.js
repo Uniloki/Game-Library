@@ -8,7 +8,13 @@ let isFinished = document.getElementById('finished');
 let gameForm = document.getElementById('gameForm');
 let allDeleteButtons;
 console.log (gameForm);
-
+function toggleButton() {
+    if(expandButton.textContent === '+'){
+        expandButton.textContent = 'X';
+    } else{
+        expandButton.textContent = '+';
+    }
+}
 function collaspe(){
     if (gameForm.classList.contains('gameform')) {
         gameForm.classList.remove('gameform');
@@ -19,7 +25,7 @@ function collaspe(){
 }
 }
 expandButton.addEventListener('click',collaspe)
-
+expandButton.addEventListener('click',toggleButton)
 //GAME LIBRARY
 let gameLibrary = [];
 function Game(name,played,finished){
@@ -88,6 +94,8 @@ function createNewGameElement(arr){
             });
         });
 }
+
+
 
 
 //Collapse 
