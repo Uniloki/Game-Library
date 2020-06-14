@@ -147,7 +147,7 @@ body{
     color: white;
 }
 
-@media (min-width: 1000px){
+@media (min-width: 1500px){
     #fixedbutton{
         right: 30px;
         font-size: 6rem;

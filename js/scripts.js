@@ -16,7 +16,7 @@ function toggleButton() {
         expandButton.textContent = '+';
     }
 }
-
+//Changes the class of the drop down form, to make it a collapsible.
 function collaspe(){
     if (gameForm.classList.contains('gameform')) {
         gameForm.classList.remove('gameform');
@@ -28,6 +28,8 @@ function collaspe(){
 }
 expandButton.addEventListener('click',collaspe)
 expandButton.addEventListener('click',toggleButton)
+
+
 //GAME LIBRARY
 let gameLibrary = [];
 function Game(name,played,finished){
@@ -64,6 +66,12 @@ form.onsubmit = function(e) {
     createNewGameElement(gameLibrary);
     form.reset();
 }
+
+
+
+
+
+
 function createNewGameElement(arr){
     let libraryL = arr.length;
         let parent = document.getElementById('gamelist')
@@ -85,7 +93,6 @@ function createNewGameElement(arr){
         newGame.appendChild(newGameText2);
         newGame.appendChild(newGameButton);
         parent.appendChild(newGame);
-
         allDeleteButtons = document.querySelectorAll('.deletebutton');
         console.log(allDeleteButtons)
         allDeleteButtons.forEach(function(elem) {
@@ -96,13 +103,5 @@ function createNewGameElement(arr){
             });
         });
 }
-
-
-
-
-//Collapse 
-
-
-
 
 
