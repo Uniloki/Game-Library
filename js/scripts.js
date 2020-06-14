@@ -8,6 +8,7 @@ let isFinished = document.getElementById('finished');
 let gameForm = document.getElementById('gameForm');
 let allDeleteButtons;
 console.log (gameForm);
+//Simple code that changes the plus to and X when the collapsible opens.
 function toggleButton() {
     if(expandButton.textContent === '+'){
         expandButton.textContent = 'X';
@@ -15,6 +16,7 @@ function toggleButton() {
         expandButton.textContent = '+';
     }
 }
+
 function collaspe(){
     if (gameForm.classList.contains('gameform')) {
         gameForm.classList.remove('gameform');
