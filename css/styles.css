@@ -147,7 +147,7 @@ body{
     color: white;
 }
 
-@media (min-width: 1500px){
+@media (min-width: 1000px){
     #fixedbutton{
         right: 30px;
         font-size: 6rem;
@@ -157,7 +157,6 @@ body{
         padding-right: 30px;
         padding-left: 30px;
         width: 150px;
-    }
     }
     header h1{
         padding: 30px;
@@ -180,7 +179,7 @@ body{
         font-size: 3rem;
     }
     .gameform{
-      max-height: 600px;
+    max-height: 600px;
     }
     #gamelist p{
         padding: 10px;
